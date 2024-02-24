@@ -4,11 +4,11 @@ import { SiTrustpilot, SiWebpack } from "react-icons/si";
 import { FaWpbeginner, FaDatabase, FaRobot } from "react-icons/fa";
 import Plans from "./ui/Plans";
 import Link from "next/link";
-import { API_URL } from "../config/index";
+import { getPlans } from "./helperFunc/functions";
 
 export default async function Home() {
-  const res = await fetch(`${API_URL}/api/plans`);
-  const plans = await res.json();
+  const plans = await getPlans();
+  console.log(plans);
   return (
     <main className="flex h-full flex-col items-center justify-between w-full">
       <div className="w-full px-24 py-8">

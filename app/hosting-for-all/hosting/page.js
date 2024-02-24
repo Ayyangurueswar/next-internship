@@ -1,16 +1,10 @@
 import Hosting from "@/app/ui/Hosting"
 import RelatedDeals from "@/app/ui/RelatedDeals";
-import { API_URL } from "@/config/index";
+import {getRelatedDeals, getItems} from '../../helperFunc/functions';
 
 const page = async () => {
-  const items = await fetch(`${API_URL}/api/data`, {
-    method: 'GET',
-  });
-  const data = await items.json();
-  const extraData = await fetch(`${API_URL}/api/relateDeals`, {
-    method: 'GET',
-  });
-  const relatedData = await extraData.json();
+  const data = await getItems()
+  const relatedData = await getRelatedDeals()
   return (
     <div className="w-full px-24 py-8">
         <h1 className="text-5xl font-normal mb-4">Best Website builders in the US</h1>
