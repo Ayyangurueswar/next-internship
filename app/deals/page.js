@@ -1,10 +1,8 @@
 import Breadcrumbs from "../ui/Breadcrumbs"
 import RelatedDeals from "../ui/RelatedDeals";
-import { getRelatedDeals } from "../helperFunc/functions";
-
+import { relatedDeals } from "../helperFunc/functions";
 
 const page = async () => {
-  const deals = await getRelatedDeals()
   return (
     <div className="w-full px-24 py-8">
         <h1 className="text-4xl">Best Deals</h1>
@@ -12,7 +10,7 @@ const page = async () => {
         <Breadcrumbs/>
         <div className="w-full flex md:flex-row flex-col justify-between">
             {
-              deals.map((item, i) => (
+              relatedDeals.map((item, i) => (
                 <RelatedDeals key={i} data={item}/>
               ))
             }

@@ -1,10 +1,8 @@
 import Hosting from "@/app/ui/Hosting"
 import RelatedDeals from "@/app/ui/RelatedDeals";
-import {getRelatedDeals, getItems} from '../../helperFunc/functions';
+import {data, relatedDeals} from '../../helperFunc/functions';
 
 const page = async () => {
-  const data = await getItems()
-  const relatedData = await getRelatedDeals()
   return (
     <div className="w-full px-24 py-8">
         <h1 className="text-5xl font-normal mb-4">Best Website builders in the US</h1>
@@ -12,7 +10,7 @@ const page = async () => {
         <h1 className="text-3xl mb-8">Related deals you might like for</h1>
         <div className="w-full flex md:flex-row flex-col justify-between">
             {
-              relatedData.map((item, i) => (
+              relatedDeals.map((item, i) => (
                 <RelatedDeals key={i} data={item}/>
               ))
             }
