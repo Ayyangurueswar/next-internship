@@ -4,6 +4,7 @@ import { API_URL } from "../../config/index";
 
 const page = async () => {
   const res = await fetch(`${API_URL}/api/relateDeals`);
+  console.log(res);
   const deals = await res.json();
   return (
     <div className="w-full px-24 py-8">
