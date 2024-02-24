@@ -1,8 +1,9 @@
 import Breadcrumbs from "../ui/Breadcrumbs"
 import RelatedDeals from "../ui/RelatedDeals";
+import { API_URL } from "../config";
 
 const page = async () => {
-  const res = await fetch("http://localhost:3000/api/relateDeals");
+  const res = await fetch(`${API_URL}/api/relateDeals`);
   const deals = await res.json();
   return (
     <div className="w-full px-24 py-8">

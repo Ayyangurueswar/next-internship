@@ -4,10 +4,11 @@ import { GiInfo } from "react-icons/gi";
 import Breadcrumbs from "./Breadcrumbs"; 
 import Cards from "./Cards";
 import { useState } from "react";
+import Link from "next/link";
 
 const Hosting = ({data}) => {
   const [displayData, setdisplayData] = useState(data);
-  const [classNames, setClassNames] = useState(['', '', '', '', '']);
+  const [classNames, setClassNames] = useState(['', '', '', '', '', '']);
   const handleClassNameChange = (i) => {
     setClassNames(classNames.map((cls, idx) => {
       if(idx == i){
@@ -42,7 +43,7 @@ const Hosting = ({data}) => {
                 <IoIosCheckmarkCircleOutline className="inline mr-1 text-xl"/> Last updated - February 2022
             </div>
             <div className=" text-slate-500">
-                <GiInfo className="inline mr-1 text-xl"/> Advertising Disclosure
+                <GiInfo className="inline mr-1 text-xl"/> <Link href='/'>Advertising Disclosure</Link> 
             </div>
           </div>
           <select className="text-slate-500" onChange={handleChange}>

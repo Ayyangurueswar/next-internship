@@ -1,13 +1,13 @@
 import Hosting from "@/app/ui/Hosting"
-import Cards from "@/app/ui/Cards";
 import RelatedDeals from "@/app/ui/RelatedDeals";
+import { API_URL } from "@/app/config";
 
 const page = async () => {
-  const items = await fetch('http://localhost:3000/api/data', {
+  const items = await fetch(`${API_URL}/api/data`, {
     method: 'GET',
   });
   const data = await items.json();
-  const extraData = await fetch('http://localhost:3000/api/relateDeals', {
+  const extraData = await fetch(`${API_URL}/api/relateDeals`, {
     method: 'GET',
   });
   const relatedData = await extraData.json();
