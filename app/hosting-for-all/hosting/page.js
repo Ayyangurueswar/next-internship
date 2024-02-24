@@ -1,6 +1,6 @@
 import Hosting from "@/app/ui/Hosting"
 import RelatedDeals from "@/app/ui/RelatedDeals";
-import { API_URL } from "@/app/config";
+import { API_URL } from "@/config/index";
 
 const page = async () => {
   const items = await fetch(`${API_URL}/api/data`, {

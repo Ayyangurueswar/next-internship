@@ -4,7 +4,7 @@ import { SiTrustpilot, SiWebpack } from "react-icons/si";
 import { FaWpbeginner, FaDatabase, FaRobot } from "react-icons/fa";
 import Plans from "./ui/Plans";
 import Link from "next/link";
-import { API_URL } from "./config";
+import { API_URL } from "../config/index";
 
 export default async function Home() {
   const res = await fetch(`${API_URL}/api/plans`);

@@ -1,6 +1,6 @@
 import Breadcrumbs from "../ui/Breadcrumbs"
 import RelatedDeals from "../ui/RelatedDeals";
-import { API_URL } from "../config";
+import { API_URL } from "../../config/index";
 
 const page = async () => {
   const res = await fetch(`${API_URL}/api/relateDeals`);
