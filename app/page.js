@@ -8,7 +8,7 @@ import { plans } from "./helperFunc/functions";
 
 export default async function Home() {
   return (
-    <main className="flex h-full flex-col items-center justify-between w-full">
+    <main className="flex flex-col items-center justify-between md:h-full md:w-full w-screen">
       <div className="w-full px-24 py-8">
         <h1 className="text-5xl font-normal">Best Website builders in the US</h1>
         <hr className="w-full h-0.5 bg-slate-500 mt-3"/>
@@ -46,7 +46,7 @@ export default async function Home() {
             }
         </div>
         <h1 className="text-center text-3xl my-10" id="services">Services</h1>
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between mb-8">
             <div className="flex items-center justify-center flex-col gap-4 w-1/4">
               <SiWebpack className="text-5xl" />
               <h5>Hosting for all</h5>
