@@ -48,7 +48,7 @@ const Hosting = ({data}) => {
             </div>
           </div>
           <div>
-            <select className="text-slate-500" onChange={handleChange}>
+            <select className="text-slate-500 bg-transparent" onChange={handleChange}>
               <option value="topRelevant">Top relevant</option>
               <option value="topRatings">Top ratings</option>
               <option value="bestChoice">Best Choice</option>
