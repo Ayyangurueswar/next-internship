@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import PropTypes from 'prop-types';
 
 const RelatedDeals = ({data}) => {
   return (
@@ -21,6 +22,21 @@ const RelatedDeals = ({data}) => {
         <Link href='/' className="text-white bg-blue-600 p-3 text-center rounded-xl">View Deal</Link>
     </div>
   )
+}
+
+RelatedDeals.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    originalPrice: PropTypes.string,
+    offer: PropTypes.string,
+    image: PropTypes.string.isRequired,
+    url: PropTypes.string,
+    isBestChoice: PropTypes.bool,
+    isBestValue: PropTypes.bool,
+    isLimited: PropTypes.bool,
+  })
 }
 
 export default RelatedDeals

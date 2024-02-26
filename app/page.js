@@ -6,7 +6,7 @@ import Plans from "./ui/Plans";
 import Link from "next/link";
 import { plans } from "./helperFunc/functions";
 
-export default async function Home() {
+export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between md:h-full md:w-full w-screen">
       <div className="w-full px-24 py-8">

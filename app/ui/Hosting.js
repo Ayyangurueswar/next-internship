@@ -5,7 +5,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import Cards from "./Cards";
 import { useState } from "react";
 import Link from "next/link";
-
+import PropTypes from "prop-types";
 
 const Hosting = ({data}) => {
   const [displayData, setdisplayData] = useState(data);
@@ -82,6 +82,25 @@ const Hosting = ({data}) => {
         </div>
     </div>
   )
+}
+
+Hosting.PropTypes = {
+  data: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    stars: PropTypes.number.isRequired,
+    alt: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    offer: PropTypes.string,
+    highlights: PropTypes.string,
+    highlightRatings: PropTypes.object,
+    isBestChoice: PropTypes.bool,
+    isBestValue: PropTypes.bool,
+    exclusiveFeatures: PropTypes.arrayOf(PropTypes.string),
+    remarks: PropTypes.arrayOf(PropTypes.string),
+  }),
 }
 
 export default Hosting
