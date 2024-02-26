@@ -1,9 +1,10 @@
 import Link from "next/link"
+import { IoIosArrowDown } from "react-icons/io"
 
 
 const Footer = () => {
   return (
-    <div className="w-full h-3/5 bg-slate-950 flex justify-between text-slate-200 md:px-20 md:py-10 px-2 py-2">
+    <div className="w-full bg-slate-950 flex md:justify-between justify-around text-slate-200 md:px-24 md:py-10 px-2 py-2 items-center">
         <div className="flex md:gap-32 gap-4">
             <div>
                 <h4 className="font-semibold">CATEGORIES</h4>
@@ -25,11 +26,14 @@ const Footer = () => {
                 </ul>
             </div>
         </div>
-        <select className=" bg-transparent h-6 my-auto">
-            <option value="US" className="text-black">United States</option>
-            <option value="IN" className="text-black">India</option>
-            <option value="UK" className="text-black">United Kingdom</option>
-        </select>
+        <div className="relative text-white">
+            <select className="bg-transparent appearance-none w-32 md:w-40">
+              <option value="US" className="text-black">United States</option>
+              <option value="IN" className="text-black">India</option>
+              <option value="UK" className="text-black">United kingdom</option>
+            </select>
+            <IoIosArrowDown className="absolute text-2xl top-0 pointer-events-none right-0"/>
+          </div>
     </div>
   )
 }

@@ -1,10 +1,12 @@
+'use client';
 import Image from "next/image"
 import Link from "next/link";
-import { IoIosStar, IoIosStarHalf, IoIosArrowDown } from "react-icons/io";
+import { IoIosStar, IoIosStarHalf, IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { GoTrophy } from "react-icons/go";
 import { IoDiamondOutline } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
 import { GiInfo } from "react-icons/gi";
+import { useState } from "react";
 
 const Cards = ({data, num}) => {
   const stars = [];
@@ -15,8 +17,9 @@ const Cards = ({data, num}) => {
   if(i !== data.stars){
     stars.push(<IoIosStarHalf key={i+1}/>);
   }
+  const [hidden, setHidden] = useState(true);
   return (
-    <div className={`${data.isBestChoice ? 'md:mb-0 mb-20' : 'mb-20'}`}>
+    <div className={`${data.isBestChoice ? 'md:mb-10 mb-20' : 'mb-20'}`}>
         {
             data.isBestChoice && (
                 <div className="bg-orange-500 text-white rounded-r-xl w-32 px-1 py-2">
@@ -40,7 +43,7 @@ const Cards = ({data, num}) => {
             <p className="text-center text-sm text-slate-500">{data.alt}</p>
         </div>
         <div className="w-full h-full flex justify-between md:flex-row flex-col gap-8 md:gap-0 max-md:items-center">
-        <div className="w-3/5">
+        <div className="md:w-3/5 w-full">
             <div className="mb-2">
                 <span className="font-bold text-slate-600">{data.title}</span> - <span className="text-slate-600">{data.description}</span>
             </div>
@@ -79,9 +82,13 @@ const Cards = ({data, num}) => {
                     </div>
                 )
             }
-            <Link href={data.url} className="text-blue-600">{data.isBestChoice || data.isBestValue ? (
-                <span>Show more <IoIosArrowDown className="inline" /></span>
-            ): (<span>Show more</span>)}</Link>
+            <div className="text-blue-600">{data.isBestChoice || data.isBestValue ? (
+                <button onClick={() => {setHidden(!hidden)}}>Show {hidden ? 'more' : 'less'} <IoIosArrowDown className={`${hidden ? 'inline' : 'hidden'}`} />
+                <IoIosArrowUp className={`${hidden ? 'hidden' : 'inline'}`}/></button>
+            ): (<button onClick={() => {setHidden(!hidden)}}>Show {hidden ? 'more' : 'less'}</button>)}</div>
+            <div className={`${hidden ? 'hidden' : ''} mt-2 text-slate-500`}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
         </div>
         <div className="md:w-1/3 flex flex-col items-center justify-between w-3/4">
             <div className="w-3/4 md:w-1/2 flex flex-col items-center justify-center gap-2 bg-blue-50 py-4 rounded mb-8 md:max-lg:w-3/4 md:mb-0 relative">
@@ -92,7 +99,7 @@ const Cards = ({data, num}) => {
                         stars.map((star) => star)
                     }
                 </div>
-                {(data.isBestChoice || data.isBestValue) && (<GiInfo className="absolute top-2 right-6 text-xs text-slate-400"/>)}
+                {(data.isBestChoice || data.isBestValue) && (<GiInfo className="absolute top-2 right-6 text-xs text-slate-400" title="Info"/>)}
             </div>
             <Link href={data.url} className="text-white py-3 text-center bg-blue-600 rounded-xl w-full">View</Link>
         </div>

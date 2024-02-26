@@ -1,5 +1,5 @@
 'use client';
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { IoIosCheckmarkCircleOutline, IoIosArrowDown } from "react-icons/io";
 import { GiInfo } from "react-icons/gi";
 import Breadcrumbs from "./Breadcrumbs"; 
 import Cards from "./Cards";
@@ -47,13 +47,14 @@ const Hosting = ({data}) => {
                 <GiInfo className="inline mr-1 text-xl"/> <Link href='/'>Advertising Disclosure</Link> 
             </div>
           </div>
-          <div>
-            <select className="text-slate-500 bg-transparent" onChange={handleChange}>
+          <div className="relative">
+            <select className="text-slate-500 bg-transparent appearance-none w-full mr-8" onChange={handleChange}>
               <option value="topRelevant">Top relevant</option>
               <option value="topRatings">Top ratings</option>
               <option value="bestChoice">Best Choice</option>
               <option value="bestValue">Best Value</option>
             </select>
+            <IoIosArrowDown className="inline absolute text-2xl text-slate-500 top-0 pointer-events-none right-0"/>
           </div>
           
         </div>

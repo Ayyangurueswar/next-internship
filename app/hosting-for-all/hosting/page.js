@@ -8,7 +8,7 @@ const page = async () => {
         <h1 className="text-5xl font-normal mb-4">Best Website builders in the US</h1>
         <Hosting data={data}/>
         <h1 className="text-3xl mb-8">Related deals you might like for</h1>
-        <div className="w-3/5 flex md:flex-row flex-col md:justify-between gap-10 mx-auto md:w-full">
+        <div className="flex md:flex-row flex-col md:justify-between gap-10 mx-auto w-full">
             {
               relatedDeals.map((item, i) => (
                 <RelatedDeals key={i} data={item}/>
